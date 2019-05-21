@@ -26,17 +26,17 @@ RfidScan();
 
 
 String dump_byte_array(byte *buffer, byte bufferSize) {
- unsigned long uiddec = 0;
+ unsigned long uid = 0;
 for (byte i = (bufferSize > 4 ? (bufferSize - 4) : 0); i < bufferSize; i++) {
 unsigned long k = 1;
 for (int j = 0; j < bufferSize - i - 1; j++){
   k = k*256;
     
 }
-uiddec += k * buffer[i];
+uid += k * buffer[i];
 
 }
-return String(uiddec);
+return String(uid);
 
 }
 
