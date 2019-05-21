@@ -8,7 +8,7 @@
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
-
+int a;
 void setup()
 {
 
@@ -58,15 +58,9 @@ Serial.print("UID: ");
 lcd.setCursor(0,1);
 lcd.print("UID:");
 
-
-for (int a = 0; a < mfrc522.uid.size; a++){
-  
-     Serial.print(mfrc522.uid.uidByte[a] < 0x10 ? " 0" :" ");
-     Serial.print(content);
-     lcd.print(mfrc522.uid.uidByte[a] < 0x10 ? " 0" : " ");
-     lcd.print(content);
-     
-}
+Serial.print(mfrc522.uid.uidByte[a] < 0x10 ? " 0" : " ");
+Serial.print(content);
+lcd.print(content);
 delay(700);
 lcd.clear();
 Serial.println();
