@@ -57,8 +57,6 @@ content = dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
 Serial.print("UID: ");
 lcd.setCursor(0,1);
 lcd.print("UID:");
-
-Serial.print(mfrc522.uid.uidByte[a] < 0x10 ? " 0" : " ");
 Serial.print(content);
 lcd.print(content);
 delay(700);
